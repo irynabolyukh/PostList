@@ -1,46 +1,27 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './App.css';
-// import {BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom';
-import Post from "./components/Post"
+import {BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom';
+
+import Posts from "./components/Posts";
+import Post from "./components/Post";
+import Add from "./components/Add";
+import Edit from "./components/Edit";
 
 function App() {
-
-  const [posts, setPosts] = useState([]);
-  const [search, setSearch] = useState("");
-  const [query, setQuery] = useState("Test title")
-
-  useEffect(() => {
-    getPosts();
-  }, [query]);
-  
-  const getPosts = async () => {
-    const response = await fetch(`http://localhost:3001/posts?title=${query}`);
-    const data = await response.json();
-    setPosts(data);
-  }
-
-  const updateSearch = e => {
-    setSearch(e.target.value);
-  }
-
-  const getSearch = e => {
-    e.preventDefault();
-    setQuery(search);
-    setSearch('');
-  }
-
-  return (
-    <div className="App">
-     <h1>Hello React</h1>
-     <form onSubmit={getSearch} className="search-form">
-       <input className="search-bar" value={search} onChange={updateSearch}></input>
-       <button className="search-button" type="submit">Seacrh</button>
-     </form>
-     {posts.map(post => (
-       <Post key={post.id} title={post.title} content={post.content} tags={post.tags} imageUrl={post.imageUrl}/>
-     ))}
-    </div>
-  );
+    return (
+        <Router>
+            <div className="App">
+                <Switch>
+                    <Route path="/posts" exact component={Posts}/>
+                    <Route path="/posts/:postId" exact component={Post}/>
+                    <Route path="/add" exact component={Add}/>
+                    <Route path="/posts/:postId/edit" exact component={Edit}/>
+                    <Redirect from="/" to="posts" />
+                </Switch>
+            </div>
+        </Router>
+    );
 }
+
 
 export default App;
