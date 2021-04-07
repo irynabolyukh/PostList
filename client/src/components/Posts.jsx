@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import {TAGS, SORT} from '../AppConstants';
-import {deletePost, getPosts, getJustPosts, showDate, showPreview} from "../ProcessData";
+import {deletePost, getPosts, showDate, showPreview} from "../ProcessData";
 
 const Posts = () => {
     const [posts, setPosts] = useState([]);
