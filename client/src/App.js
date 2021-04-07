@@ -15,7 +15,8 @@ function App() {
                     <Route path="/posts" exact component={Posts}/>
                     <Route path="/posts/:postId" exact component={Post}/>
                     <Route path="/add" exact component={Add}/>
-                    <Route path="/posts/:postId/edit" exact component={Edit}/>
+                    <Route path="/posts/edit/:postId" exact component={Edit}/>
+                    <Redirect from="/posts/edit/" to="posts" />
                     <Redirect from="/" to="posts" />
                 </Switch>
             </div>

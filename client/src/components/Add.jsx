@@ -22,6 +22,11 @@ const Add = () => {
     };
     return (
         <div>
+            <div> 
+                <button className="">
+                    <Link to="/" >Cancel</Link>
+                </button>
+            </div>
             <form onSubmit={async (e) => {
                 e.persist();
                 e.preventDefault();
@@ -46,9 +51,6 @@ const Add = () => {
                 </select>
                 <input type="submit" value="submit" className=""/>
             </form>
-            <button className="">
-                <Link to="/" >To posts</Link>
-            </button>
         </div>
     )
 };

@@ -12,11 +12,19 @@ const sortSearch = (input) => {
   return `_sort=createdAt&_order=${input}`;
 };
 
+//needs to be done
+const sortByTitleSearch = (input) => {
+  if (!input) {
+      return '';
+  }
+  return `_sort=title&_order=${input}`;
+};
+
 const titleSearch = (input) => {
   if (!input) {
       return '';
   }
-  return `name_like=${input}`;
+  return `title_like=${input}`;
 };
 
 export const getPosts = async (title, tag) => {
@@ -40,4 +48,8 @@ export const showDate = mils => {
   const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
   let d = new Date(mils);
   return d.getDate().toString() + " " + months[d.getMonth()] + " " + d.getFullYear().toString() + ", " + d.getHours() + ":" + d.getMinutes();
+};
+
+export const showPreview = text => {
+  return text.slice(0,40) + "...";
 };

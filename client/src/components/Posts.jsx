@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import {TAGS, SORT} from '../AppConstants';
-import {deletePost, getPosts, getJustPosts, showDate} from "../ProcessData";
+import {deletePost, getPosts, getJustPosts, showDate, showPreview} from "../ProcessData";
 
 const Posts = () => {
     const [posts, setPosts] = useState([]);
@@ -66,22 +66,17 @@ const Posts = () => {
             <div className="">
                 {(posts || []).map(post => (
                     <div key={post.id} className="">
-                        <div>{post.title}</div>
+                        <div><Link to={`posts/${post.id.toString()}`}>{post.title}</Link></div>
                         <div>{post.tags.map(tag => (<span>#{tag} </span>))}</div>
                         <div></div>
-                        <div>{post.content}</div>
-                        <div>Created: {showDate(post.createdAt)}</div>
-                        <div>Edited: {showDate(post.changedAt)}</div>
+                        <div>{showPreview(post.content)}</div>
+                        <div>{showDate(post.createdAt)}</div>
+                        {/* <div>Edited: {showDate(post.changedAt)}</div> */}
                         <img src={post.imageUrl} alt=""/>
                         <div className="">
                             <div className="">
                                 <button>
-                                    <Link to={`posts/${post.id.toString()}`}>View</Link>
-                                </button>
-                            </div>
-                            <div className="">
-                                <button>
-                                    <Link to={`posts/${post.id.toString()}/edit`}>Edit</Link>
+                                    <Link to={`posts/edit/${post.id.toString()}`}>Edit</Link>
                                 </button>
                             </div>
                             <div className="">

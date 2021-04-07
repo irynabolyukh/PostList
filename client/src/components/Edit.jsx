@@ -5,6 +5,7 @@ import { Link, useParams, useHistory } from 'react-router-dom';
 const Edit = () => {
     const history = useHistory();
     const { postId: id } = useParams();
+    const [post, setPost] = useState(null);
 
     const putData = ({title, content, imageUrl, tags, createdAt}) => {
         fetch(`http://localhost:3001/posts/${id}`, {
@@ -22,7 +23,6 @@ const Edit = () => {
             }
         })
     };
-    const [post, setPost] = useState(null);
     
     useEffect(() => {
         const fetchData = async () => {
@@ -42,6 +42,11 @@ const Edit = () => {
 
     return (
         <div>
+            <div> 
+                <button className="">
+                    <Link to="/" >Cancel</Link>
+                </button>
+            </div>
             <form onSubmit={(e) => {
                 e.persist();
                 e.preventDefault();
@@ -67,9 +72,6 @@ const Edit = () => {
                 </select>
                 <input type="submit" value="submit" className=""/>
             </form>
-            <button className="">
-                <Link to="/" >To Posts</Link>
-            </button>
         </div>
     )
 };
