@@ -5,19 +5,11 @@ const tagSearch = (input, tag) => {
   return `${tag}=${input}`;
 };
 
-const sortSearch = (input) => {
-  if (!input) {
+const sortSearch = (sortDate,sortTitle) => {
+  if (!sortDate || !sortTitle) {
       return '';
   }
-  return `_sort=createdAt&_order=${input}`;
-};
-
-//needs to be done
-const sortByTitleSearch = (input) => {
-  if (!input) {
-      return '';
-  }
-  return `_sort=title&_order=${input}`;
+  return `_sort=createdAt,title&_order=${sortDate},${sortTitle}`;
 };
 
 const titleSearch = (input) => {
@@ -29,9 +21,9 @@ const titleSearch = (input) => {
 
 export const getPosts = async (title, tag) => {
   const tagParam = tagSearch(tag, 'tag');
-  const sort = sortSearch(localStorage.getItem('sort'));
+  const sort = sortSearch(localStorage.getItem('sort'),localStorage.getItem('sortTitle'));
   const filter = titleSearch(title);
-  const data = await fetch(`http://localhost:3001/posts?${[tagParam, sort, filter].join('&')}`);
+  const data = await fetch(`http://localhost:3001/posts?${[tagParam, filter, sort].join('&')}`);
   return await data.json();
 };
 

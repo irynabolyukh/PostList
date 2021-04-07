@@ -40,12 +40,26 @@ const Posts = () => {
                     </select>
                 </div>
                 <div>
-                    <label htmlFor="sort" className="">Sort</label>
+                    <label htmlFor="sort" className="">Sort by Date</label>
                     <select name="sort" id="sort" onChange={e => {
                         localStorage.setItem('sort', e.target.value);
                         fetchData();
                     }}
                             defaultValue={localStorage.getItem('sort')}>
+                        {SORT.map(t => (
+                            <option value={t.value} key={t.value}>
+                                {t.label}
+                            </option>
+                        ))}
+                    </select>
+                </div>
+                <div>
+                    <label htmlFor="sortTitle" className="">Sort by Title</label>
+                    <select name="sortTitle" id="sortTitle" onChange={e => {
+                        localStorage.setItem('sortTitle', e.target.value);
+                        fetchData();
+                    }}
+                            defaultValue={localStorage.getItem('sortTitle')}>
                         {SORT.map(t => (
                             <option value={t.value} key={t.value}>
                                 {t.label}
