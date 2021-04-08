@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {useParams,useHistory, Link} from 'react-router-dom';
-import {deletePost, showDate} from "../ProcessData";
+import {deletePost, showDate} from "../processData";
 
 const Post = () => {
     const {postId : id} = useParams();
@@ -24,13 +24,13 @@ const Post = () => {
     }
 
     return (
-        <div>
+        <div key={post.id}>
             <div>
                 <button className="back">
                     <Link to="/" >To posts</Link>
                 </button>
             </div>
-            <div key={post.id}>
+            <div>
                 <div>{post.title}</div>
                 <div>{post.tags.map(tag => (<span>#{tag} </span>))}</div>
                 <div></div>

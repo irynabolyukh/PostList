@@ -20,7 +20,6 @@ const titleSearch = (input) => {
 
 const checkAllTags = (postTagsArray, searchTagsArray) => {
   return searchTagsArray.every(tag => postTagsArray.includes(tag));
-  // return true;
 }
 
 export const getPosts = async (title, tag) => {
@@ -36,15 +35,17 @@ export const getAllTags = async () => {
   return await data.json();
 };
 
+export const getAllImages = async () => {
+  const data = await fetch(`http://localhost:3001/images`);
+  return await data.json();
+};
+
 export const getUsedTags = async () => {
   const data = await fetch(`http://localhost:3001/posts`);
   const jsonArray = await data.json();
   
   let jointArray = []
   jsonArray.forEach(post => jointArray=jointArray.concat(post.tags));
-  // for(let i = 0; i < jsonArray.length; i++){
-  //   jointArray = jointArray.concat(jsonArray[i].tags);
-  // }
 
   const uniqueArray = jointArray.reduce((newArray, item) =>{
       if (newArray.includes(item)){

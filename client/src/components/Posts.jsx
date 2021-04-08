@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
-import {SORT} from '../AppConstants';
-import {deletePost, getPosts, showDate, showPreview, getUsedTags} from "../ProcessData";
+import {SORT} from '../appConstants';
+import {deletePost, getPosts, showDate, showPreview, getUsedTags} from "../processData";
 
 const Posts = () => {
     const [posts, setPosts] = useState([]);
@@ -20,7 +20,7 @@ const Posts = () => {
     const handleChange = (e) => {
         let values = Array.from(e.target.selectedOptions, option => option.value);
         setTag(values);
-      }
+    };
 
     useEffect(() => {
         const fetchData = async () => {
@@ -89,7 +89,6 @@ const Posts = () => {
                         <div></div>
                         <div>{showPreview(post.content)}</div>
                         <div>{showDate(post.createdAt)}</div>
-                        {/* <div>Edited: {showDate(post.changedAt)}</div> */}
                         <img src={post.imageUrl} alt=""/>
                         <div className="">
                             <div className="">
