@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
 import {SORT} from '../AppConstants';
-import {deletePost, getPosts, showDate, showPreview, getAllTags, getUsedTags} from "../ProcessData";
+import {deletePost, getPosts, showDate, showPreview, getUsedTags} from "../ProcessData";
 
 const Posts = () => {
     const [posts, setPosts] = useState([]);
@@ -11,7 +11,6 @@ const Posts = () => {
 
     const fetchData = async () => {
         setPosts(await getPosts(title, tag));
-        // setPosts(await getJustPosts());
     };
     const deleteThisPost = id => async () => {
         await deletePost(id);
@@ -25,10 +24,8 @@ const Posts = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            setTags(await getAllTags());
+            setTags(await getUsedTags());
             setPosts(await getPosts(title, tag));
-            // setTags(await getUsedTags());
-            // setPosts(await getJustPosts());
         };
         fetchData();
     // }, []);
@@ -41,8 +38,8 @@ const Posts = () => {
                     <label htmlFor="tag" className="">Tag</label>
                     <select name="tag" id="tag" onChange={handleChange} multiple>
                         {tags.map(t => (
-                            <option value={t.name} key={t.name}>
-                                {t.name}
+                            <option value={t} key={t}>
+                                {t}
                             </option>
                         ))}
                     </select>

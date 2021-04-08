@@ -31,8 +31,23 @@ export const getAllTags = async () => {
 };
 
 export const getUsedTags = async () => {
-  const data = await fetch(`http://localhost:3001/tags`);
-  return await data.json();
+  const data = await fetch(`http://localhost:3001/posts`);
+  const jsonArray = await data.json();
+  
+  let jointArray = []
+  jsonArray.forEach(post => jointArray=jointArray.concat(post.tags));
+  // for(let i = 0; i < jsonArray.length; i++){
+  //   jointArray = jointArray.concat(jsonArray[i].tags);
+  // }
+
+  const uniqueArray = jointArray.reduce((newArray, item) =>{
+      if (newArray.includes(item)){
+          return newArray;
+      } else {
+          return [...newArray, item];
+      }
+  }, []);
+  return uniqueArray;
 };
 
 export const getJustPosts = async () => {
