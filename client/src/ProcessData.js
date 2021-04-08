@@ -1,10 +1,3 @@
-const tagSearch = (input, tag) => {
-  if (!input) {
-      return '';
-  }
-  return `${tag}=${input}`;
-};
-
 const sortSearch = (sortDate,sortTitle) => {
   if (!sortDate || !sortTitle) {
       return '';
@@ -19,11 +12,26 @@ const titleSearch = (input) => {
   return `title_like=${input}`;
 };
 
+const checkAllTags = (postTagsArray, searchTagsArray) => {
+  return searchTagsArray.every(tag => postTagsArray.includes(tag));
+  // return true;
+}
+
 export const getPosts = async (title, tag) => {
-  const tagParam = tagSearch(tag, 'tag');
   const sort = sortSearch(localStorage.getItem('sort'),localStorage.getItem('sortTitle'));
   const filter = titleSearch(title);
-  const data = await fetch(`http://localhost:3001/posts?${[tagParam, filter, sort].join('&')}`);
+  const data = await fetch(`http://localhost:3001/posts?${[filter, sort].join('&')}`);
+  const jsonArray = await data.json();
+  return jsonArray.filter(post => checkAllTags(post.tags,tag));
+};
+
+export const getAllTags = async () => {
+  const data = await fetch(`http://localhost:3001/tags`);
+  return await data.json();
+};
+
+export const getUsedTags = async () => {
+  const data = await fetch(`http://localhost:3001/tags`);
   return await data.json();
 };
 

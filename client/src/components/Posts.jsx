@@ -1,12 +1,13 @@
 import React, {useState, useEffect} from 'react';
 import {Link} from 'react-router-dom';
-import {TAGS, SORT} from '../AppConstants';
-import {deletePost, getPosts, showDate, showPreview} from "../ProcessData";
+import {SORT} from '../AppConstants';
+import {deletePost, getPosts, showDate, showPreview, getAllTags, getUsedTags} from "../ProcessData";
 
 const Posts = () => {
     const [posts, setPosts] = useState([]);
+    const [tags, setTags] = useState([]);
     const [title, setTitle] = useState('');
-    const [tag, setTag] = useState('');
+    const [tag, setTag] = useState([]);
 
     const fetchData = async () => {
         setPosts(await getPosts(title, tag));
@@ -17,9 +18,16 @@ const Posts = () => {
         fetchData();
     };
 
+    const handleChange = (e) => {
+        let values = Array.from(e.target.selectedOptions, option => option.value);
+        setTag(values);
+      }
+
     useEffect(() => {
         const fetchData = async () => {
+            setTags(await getAllTags());
             setPosts(await getPosts(title, tag));
+            // setTags(await getUsedTags());
             // setPosts(await getJustPosts());
         };
         fetchData();
@@ -31,10 +39,10 @@ const Posts = () => {
             <div className="">
                 <div>
                     <label htmlFor="tag" className="">Tag</label>
-                    <select name="tag" id="tag" onChange={e => setTag(e.target.value)}>
-                        {TAGS.map(t => (
-                            <option value={t} key={t}>
-                                {t}
+                    <select name="tag" id="tag" onChange={handleChange} multiple>
+                        {tags.map(t => (
+                            <option value={t.name} key={t.name}>
+                                {t.name}
                             </option>
                         ))}
                     </select>
