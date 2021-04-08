@@ -28,7 +28,6 @@ const Posts = () => {
             setPosts(await getPosts(title, tag));
         };
         fetchData();
-    // }, []);
     }, [tag, title]);
 
     return (
