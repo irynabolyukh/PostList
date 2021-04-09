@@ -9,16 +9,15 @@ const Edit = () => {
     const [tags, setTags] = useState([]);
     const [tagsSelected, setTag] = useState([]);
     const [imgs, setImgs] = useState([]);
-    const [imgSelected, setImg] = useState("");
 
-    const putData = ({title, content, createdAt}) => {
+    const putData = ({title, content, imageUrl, tags, createdAt}) => {
         fetch(`http://localhost:3001/posts/${id}`, {
             method: 'PUT',
             body: JSON.stringify({
               changedAt: Date.now(),
               createdAt,
-              tags: tagsSelected,
-              imageUrl: imgSelected,
+              tags,
+              imageUrl,
               title,
               content
             }),
@@ -62,12 +61,13 @@ const Edit = () => {
             <form onSubmit={(e) => {
                 e.persist();
                 e.preventDefault();
-                const {target: {elements: {title, content}}} = e;
+                const {target: {elements: {title, content, imageUrl}}} = e;
                 putData({
                   title: title.value,
                   content: content.value,
-                  createdAt: post.createdAt,
-                  tags: tags
+                  imageUrl: imageUrl.value,
+                  tags: (tagsSelected.length > 0)? tagsSelected : post.tags,
+                  createdAt: post.createdAt
                 });
                 history.push(`/posts/${post.id.toString()}`);
             }}>
@@ -75,12 +75,12 @@ const Edit = () => {
                 <textarea name="content" defaultValue={post.content} className=""/>
                 <select name="tags" id="tags" defaultValue={post.tags} className="" onChange={handleChange} multiple>
                      {tags.map(t => (
-                            <option value={t.name} key={t.name}>
+                            <option value={t.name} key={t.id}>
                                 {t.name}
                             </option>
                         ))}
                 </select>
-                <select name="imageUrl" id="imageUrl" defaultValue={post.imageUrl} onChange={e => setImg(e.target.value)}>
+                <select name="imageUrl" id="imageUrl" defaultValue={post.imageUrl}>
                         {imgs.map(t => (
                             <option value={t.url} key={t.id}>
                                 {t.url}
