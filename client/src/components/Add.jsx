@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import {getAllTags, getAllImages} from "../processData";
 
+import Return from "./Return";
 
 const Add = () => {
     const history = useHistory();
@@ -42,11 +43,7 @@ const Add = () => {
 
     return (
         <div>
-            <div> 
-                <button className="">
-                    <Link to="/" >Cancel</Link>
-                </button>
-            </div>
+            <Return></Return>
             <form onSubmit={async (e) => {
                 e.persist();
                 e.preventDefault();

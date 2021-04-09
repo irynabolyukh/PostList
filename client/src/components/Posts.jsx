@@ -81,14 +81,14 @@ const Posts = () => {
                     </button>
                 </div>
             </div>
-            <div className="">
+            <div>
                 {(posts || []).map(post => (
-                    <div key={post.id} className="">
-                        <div><Link to={`posts/${post.id.toString()}`}>{post.title}</Link></div>
-                        <div>{post.tags.map(tag => (<span>#{tag} </span>))}</div>
+                    <div key={post.id} className="post">
+                        <div className="title"><Link to={`posts/${post.id.toString()}`} style={{ color: '#000' }}>{post.title}</Link></div>
+                        <div className="tag">{post.tags.map(tag => (<span>#{tag} </span>))}</div>
                         <div></div>
-                        <div>{showPreview(post.content)}</div>
-                        <div>{showDate(post.createdAt)}</div>
+                        <div className="content">{showPreview(post.content)}</div>
+                        <div className="date">{showDate(post.createdAt)}</div>
                         <img src={post.imageUrl} alt=""/>
                         <div className="">
                             <div className="">

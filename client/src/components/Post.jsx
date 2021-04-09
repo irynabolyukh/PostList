@@ -2,6 +2,8 @@ import React, {useState, useEffect} from 'react';
 import {useParams,useHistory, Link} from 'react-router-dom';
 import {deletePost, showDate} from "../processData";
 
+import Return from "./Return";
+
 const Post = () => {
     const {postId : id} = useParams();
     const history = useHistory();
@@ -25,24 +27,24 @@ const Post = () => {
 
     return (
         <div key={post.id}>
+            <Return></Return>
             <div>
-                <button className="back">
-                    <Link to="/" >To posts</Link>
-                </button>
-            </div>
-            <div>
-                <div>{post.title}</div>
-                <div>{post.tags.map(tag => (<span>#{tag} </span>))}</div>
+                <div className="title">{post.title}</div>
+                <div className="tag">{post.tags.map(tag => (<span>#{tag} </span>))}</div>
                 <div></div>
-                <div>{post.content}</div>
-                <div>{showDate(post.createdAt)}</div>
+                <div className="content">{post.content}</div>
+                <div className="date">{showDate(post.createdAt)}</div>
                 {/* <div>Edited: {showDate(post.changedAt)}</div> */}
                 <img src={post.imageUrl} alt=""/>
-                <Link to={`/posts/edit/${id}`}>Edit</Link>
-                <button onClick={() => {
-                    deletePost(id);
-                    history.push('/posts');
-                }}>Delete</button>
+                <div>
+                    <button>
+                        <Link className="button" to={`/posts/edit/${id}`}>Edit</Link>
+                    </button>
+                    <button className="button" onClick={() => {
+                        deletePost(id);
+                        history.push('/posts');
+                    }}>Delete</button>
+                </div>
             </div>
         </div>
     )
