@@ -5,7 +5,7 @@ const Return = () => {
   return (
         <div key="return">
             <button className="return">
-                <Link to="/" >To posts</Link>
+                <Link className='text-link' to="/" >To posts</Link>
             </button>
         </div>
   )

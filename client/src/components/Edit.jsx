@@ -54,7 +54,7 @@ const Edit = () => {
     };
 
     return (
-        <div>
+        <div className="form">
             <Return></Return>
             <form onSubmit={(e) => {
                 e.persist();
@@ -69,9 +69,9 @@ const Edit = () => {
                 });
                 history.push(`/posts/${post.id.toString()}`);
             }}>
-                <input type="text" name="title" defaultValue={post.title} className=""/>
-                <textarea name="content" defaultValue={post.content} className=""/>
-                <select name="tags" id="tags" defaultValue={post.tags} className="" onChange={handleChange} multiple>
+                <input type="text" name="title" defaultValue={post.title}/>
+                <textarea name="content" defaultValue={post.content} cols="30" rows="10"/>
+                <select name="tags" id="tags" defaultValue={post.tags} onChange={handleChange} multiple>
                      {tags.map(t => (
                             <option value={t.name} key={t.id}>
                                 {t.name}
@@ -85,7 +85,7 @@ const Edit = () => {
                             </option>
                         ))}
                 </select>
-                <input type="submit" value="submit" className=""/>
+                <button type="submit" value="submit">Submit</button>
             </form>
         </div>
     )

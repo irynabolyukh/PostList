@@ -32,13 +32,13 @@ const Post = () => {
                 <div className="title">{post.title}</div>
                 <div className="tag">{post.tags.map(tag => (<span>#{tag} </span>))}</div>
                 <div></div>
-                <div className="content">{post.content}</div>
                 <div className="date">{showDate(post.createdAt)}</div>
                 {/* <div>Edited: {showDate(post.changedAt)}</div> */}
                 <img src={post.imageUrl} alt=""/>
+                <div className="content">{post.content}</div>
                 <div>
                     <button>
-                        <Link className="button" to={`/posts/edit/${id}`}>Edit</Link>
+                        <Link className='text-link' to={`/posts/edit/${id}`}>Edit</Link>
                     </button>
                     <button className="button" onClick={() => {
                         deletePost(id);

@@ -32,9 +32,9 @@ const Posts = () => {
 
     return (
         <div>
-            <div className="">
+            <div className="search-menu">
                 <div>
-                    <label htmlFor="tag" className="">Tag</label>
+                    <label htmlFor="tag">Tag</label>
                     <select name="tag" id="tag" onChange={handleChange} multiple>
                         {tags.map(t => (
                             <option value={t} key={t}>
@@ -44,7 +44,7 @@ const Posts = () => {
                     </select>
                 </div>
                 <div>
-                    <label htmlFor="sort" className="">Sort by Date</label>
+                    <label htmlFor="sort">Sort by Date</label>
                     <select name="sort" id="sort" onChange={e => {
                         localStorage.setItem('sort', e.target.value);
                         fetchData();
@@ -58,7 +58,7 @@ const Posts = () => {
                     </select>
                 </div>
                 <div>
-                    <label htmlFor="sortTitle" className="">Sort by Title</label>
+                    <label htmlFor="sortTitle">Sort by Title</label>
                     <select name="sortTitle" id="sortTitle" onChange={e => {
                         localStorage.setItem('sortTitle', e.target.value);
                         fetchData();
@@ -72,31 +72,32 @@ const Posts = () => {
                     </select>
                 </div>
                 <div>
-                    <label htmlFor="name" className="">TITLE</label>
+                    <label htmlFor="name">Search by Title</label>
                     <input type="text" name="name" onChange={e => setTitle(e.target.value)}/>
                 </div>
-                <div className="">
-                    <button className="">
-                        <Link to="add">Add</Link>
+                <div>
+                    <button>
+                        <Link className='text-link' to="add"><span>Add</span></Link>
                     </button>
                 </div>
             </div>
             <div>
                 {(posts || []).map(post => (
                     <div key={post.id} className="post">
-                        <div className="title"><Link to={`posts/${post.id.toString()}`} style={{ color: '#000' }}>{post.title}</Link></div>
+                        <hr/>
+                        <div className="title"><Link className='title-link' to={`posts/${post.id.toString()}`}>{post.title}</Link></div>
                         <div className="tag">{post.tags.map(tag => (<span>#{tag} </span>))}</div>
                         <div></div>
                         <div className="content">{showPreview(post.content)}</div>
                         <div className="date">{showDate(post.createdAt)}</div>
                         <img src={post.imageUrl} alt=""/>
-                        <div className="">
-                            <div className="">
+                        <div className="buttons">
+                            <div>
                                 <button>
-                                    <Link to={`posts/edit/${post.id.toString()}`}>Edit</Link>
+                                    <Link className='text-link' to={`posts/edit/${post.id.toString()}`}><span>Edit</span></Link>
                                 </button>
                             </div>
-                            <div className="">
+                            <div>
                                 <button onClick={deleteThisPost(post.id)}>Delete</button>
                             </div>
                         </div>

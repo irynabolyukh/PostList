@@ -42,7 +42,7 @@ const Add = () => {
       };
 
     return (
-        <div>
+        <div className="form">
             <Return></Return>
             <form onSubmit={async (e) => {
                 e.persist();
@@ -54,9 +54,9 @@ const Add = () => {
                 });
                 history.push('/posts');
             }}>
-                <input type="text" name="title" placeholder="Title" className=""/>
-                <textarea name="content" placeholder="Content" className=""/>
-                <select name="tags" id="tags" className="" onChange={handleChange} multiple>
+                <input type="text" name="title" placeholder="Title" />
+                <textarea name="content" placeholder="Content" cols="30" rows="10"/>
+                <select name="tags" id="tags" onChange={handleChange} multiple>
                      {tags.map(t => (
                             <option value={t.name} key={t.name}>
                                 {t.name}
@@ -70,7 +70,7 @@ const Add = () => {
                             </option>
                         ))}
                 </select>
-                <input type="submit" value="submit" className=""/>
+                <button type="submit" value="submit">Submit</button>
             </form>
         </div>
     )
