@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import { useParams, useHistory } from 'react-router-dom';
+import { useParams, useHistory, Link } from 'react-router-dom';
 import {getAllTags, getAllImages} from "../processData";
 
 import Return from "./Return";
@@ -85,7 +85,12 @@ const Edit = () => {
                             </option>
                         ))}
                 </select>
-                <button type="submit" value="submit">Submit</button>
+                <div className="buttons">
+                    <button>
+                        <Link className='text-link' to="/" >Cancel</Link>
+                    </button>
+                    <button type="submit" value="submit">Save</button>
+                </div>
             </form>
         </div>
     )

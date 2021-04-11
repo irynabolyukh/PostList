@@ -6,7 +6,7 @@ const sortSearch = (sortDate,sortTitle) => {
     return `_sort=title&_order=${sortTitle}`;
   }
   if (!!sortDate && !sortTitle) {
-    return `_sort=createdAt&_order=${sortTitle}`;
+    return `_sort=createdAt&_order=${sortDate}`;
   }
   return `_sort=createdAt,title&_order=${sortDate},${sortTitle}`;
 };

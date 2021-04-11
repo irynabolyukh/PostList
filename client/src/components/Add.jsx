@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Link } from 'react-router-dom';
 import {getAllTags, getAllImages} from "../processData";
 
 import Return from "./Return";
@@ -70,7 +70,12 @@ const Add = () => {
                             </option>
                         ))}
                 </select>
-                <button type="submit" value="submit">Submit</button>
+                <div className="buttons">
+                    <button>
+                        <Link className='text-link' to="/" >Cancel</Link>
+                    </button>
+                    <button type="submit" value="submit">Save</button>
+                </div>
             </form>
         </div>
     )

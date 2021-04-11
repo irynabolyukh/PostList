@@ -17,6 +17,14 @@ const Posts = () => {
         fetchData();
     };
 
+    const clearFilters = async () => {
+        setTag([]);
+        setTitle('');
+        localStorage.setItem('sort', '');
+        localStorage.setItem('sortTitle', '');
+        fetchData();
+    };
+
     const handleChange = (e) => {
         let values = Array.from(e.target.selectedOptions, option => option.value);
         setTag(values);
@@ -81,6 +89,9 @@ const Posts = () => {
                     </button>
                 </div>
             </div>
+            <div className="buttons">
+                <button onClick={clearFilters}>Clear</button>
+            </div>
             <div>
                 {(posts || []).map(post => (
                     <div key={post.id} className="post">
@@ -92,14 +103,10 @@ const Posts = () => {
                         <div className="date">{showDate(post.createdAt)}</div>
                         <img src={post.imageUrl} alt=""/>
                         <div className="buttons">
-                            <div>
-                                <button>
+                            <button>
                                     <Link className='text-link' to={`posts/edit/${post.id.toString()}`}><span>Edit</span></Link>
-                                </button>
-                            </div>
-                            <div>
-                                <button onClick={deleteThisPost(post.id)}>Delete</button>
-                            </div>
+                            </button>
+                            <button onClick={deleteThisPost(post.id)}>Delete</button>
                         </div>
                     </div>
                 ))}
