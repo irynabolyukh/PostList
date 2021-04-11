@@ -69,7 +69,7 @@ export const deletePost = async id => {
 export const showDate = mils => {
   const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
   let d = new Date(mils);
-  return d.getDate().toString() + " " + months[d.getMonth()] + " " + d.getFullYear().toString() + ", " + d.getHours() + ":" + d.getMinutes();
+  return d.getDate().toString() + " " + months[d.getMonth()] + " " + d.getFullYear().toString() + ", " + d.getHours() + ":" + ((d.getMinutes() < 10)?("0"+d.getMinutes()):(d.getMinutes()));
 };
 
 export const showPreview = text => {
