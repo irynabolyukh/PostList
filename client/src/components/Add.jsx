@@ -70,6 +70,7 @@ const Add = () => {
                             </option>
                         ))}
                 </select>
+                <div><img src={imgSelected}></img></div>
                 <div className="buttons">
                     <button>
                         <Link className='text-link' to="/" >Cancel</Link>

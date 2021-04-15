@@ -11,6 +11,7 @@ const Edit = () => {
     const [tags, setTags] = useState([]);
     const [tagsSelected, setTag] = useState([]);
     const [imgs, setImgs] = useState([]);
+    const [imgSelected, setImg] = useState("");
 
     const putData = ({title, content, imageUrl, tags, createdAt}) => {
         fetch(`http://localhost:3001/posts/${id}`, {
@@ -78,13 +79,14 @@ const Edit = () => {
                             </option>
                         ))}
                 </select>
-                <select name="imageUrl" id="imageUrl" defaultValue={post.imageUrl}>
+                <select name="imageUrl" id="imageUrl" defaultValue={post.imageUrl} onChange={e => setImg(e.target.value)}>
                         {imgs.map(t => (
                             <option value={t.url} key={t.id}>
                                 {t.url}
                             </option>
                         ))}
                 </select>
+                <div><img src={imgSelected}></img></div>
                 <div className="buttons">
                     <button>
                         <Link className='text-link' to="/" >Cancel</Link>
