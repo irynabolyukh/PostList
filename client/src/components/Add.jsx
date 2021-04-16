@@ -1,11 +1,10 @@
 import React, {useState, useEffect} from 'react';
-import { useHistory, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import {getAllTags, getAllImages} from "../processData";
 
 import Return from "./Return";
 
 const Add = () => {
-    const history = useHistory();
     const [tags, setTags] = useState([]);
     const [tagsSelected, setTag] = useState([]);
     const [imgs, setImgs] = useState([]);
@@ -25,6 +24,9 @@ const Add = () => {
             headers: {
                 'Content-Type': 'application/json'
             }
+        }).then((res) => res.json()).then((resJson) => {
+            let postId = resJson.id;
+            window.location.replace(`/posts/${postId}`);
         })
     };
 
@@ -52,7 +54,6 @@ const Add = () => {
                     title: title.value,
                     content: content.value
                 });
-                history.push('/posts');
             }}>
                 <input type="text" name="title" placeholder="Title" />
                 <textarea name="content" placeholder="Content" cols="30" rows="10"/>
