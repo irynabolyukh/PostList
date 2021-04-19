@@ -1,40 +1,61 @@
 {
   "posts": [
     {
-      "id": 1,
-      "createdAt": 1616164012425,
-      "changedAt": 1616164016425,
-      "tags": ["nature", "sky", "snow"],
-      "imageUrl": "https://images.unsplash.com/photo-1613092869277-6e02af5564aa?auto=format&fit=crop&w=1500&q=80",
-      "title": "Test title",
-      "content": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae quibusdam doloremque a blanditiis pariatur harum placeat. Sequi distinctio quam quasi, ex culpa exercitationem voluptatum itaque amet debitis totam, quod nostrum."
+      "changedAt": 1618086301085,
+      "createdAt": 1618053330672,
+      "tags": [
+        "snow",
+        "landscape"
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1610128114197-485d933885c5?auto=format&fit=crop&w=1500&q=80",
+      "title": "The Ultimate Iceland Itinerary",
+      "content": "In the summer time I am sure that it is a breeze to get to, but the winter is a whole other story - well at least it was for us! At this point we had driven about 12 hours just so we could see the most powerful waterfall in Europe - so you bet your arse that I was going to be seeing that dang waterfall. When we got to the turnoff for the waterfall there were a lot of cars stopped at the entrance where the 23km (12 mile) drive to Dettifoss begins. We started down the road and decided to turn around before our car got stuck (well we actually didn't turn around, we had to back out).  Long story short we made it eventually, but that is a whole other post that will be coming very soon. It was a very fun misadventure! \n\n \n\nDue to our misadventure we ended up having the entire waterfall to ourselves, along with some Texans that we picked up along the way. But, it was pretty epic - we were there for two hours and not a sinner came by.\n\n \n\nWhen you get there you will have to walk about 1/4 mile to get to Dettifoss. It was as impressive as it sounds! In the summer time you can drive down another road to the other side and get up close and personal with the waterfall. I would recommend you explore both routes as they are very different if both the roads are open. ",
+      "id": 1
     },
     {
-      "id": 2,
-      "createdAt": 1616162016425,
-      "changedAt": 1616164016425,
-      "tags": ["mountain", "snow"],
+      "createdAt": 1618053471088,
+      "changedAt": 1618053471088,
+      "tags": [
+        "mountain"
+      ],
       "imageUrl": "https://images.unsplash.com/photo-1508108712903-49b7ef9b1df8?auto=format&fit=crop&w=1500&q=80",
-      "title": "Test title",
-      "content": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae quibusdam doloremque a blanditiis pariatur harum placeat. Sequi distinctio quam quasi, ex culpa exercitationem voluptatum itaque amet debitis totam, quod nostrum."
+      "title": "Our trip to Havasu Falls",
+      "content": "Me and my husband thought a trip to Havasu would be a dream come to life. I mean what sounds better than a desert oasis filled with waterfalls! If you don't  know me, you may not know that I LOVE waterfalls. Maybe its because the negative ions that flow off of them give me a high, or maybe it is because their surreal splendor leaves me awe-struck. Whatever it is, I just love them! \n\nWe booked a three day two night trip in Havasu. No, we did not go with a tour group because we don't know how to camp or set up a tent. I actually grew up camping and honestly Havasu is not really like true wilderness camping as there are at least about 200 other people there with you, in a very close proximity. The reason we booked a tour company to take us was because we did not get a permit in time to go on our own and the tour company provides the permit for you. \n\nNow for the horror!",
+      "id": 2
     },
     {
-      "id": 3,
-      "createdAt": 1616124016425,
-      "changedAt": 1616164016425,
-      "tags": ["landscape"],
+      "changedAt": 1618053549726,
+      "createdAt": 1618053532023,
+      "tags": [
+        "nature",
+        "sky"
+      ],
       "imageUrl": "https://images.unsplash.com/photo-1616141893496-fbc65370493e?auto=format&fit=crop&w=1500&q=80",
-      "title": "Test title",
-      "content": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae quibusdam doloremque a blanditiis pariatur harum placeat. Sequi distinctio quam quasi, ex culpa exercitationem voluptatum itaque amet debitis totam, quod nostrum."
+      "title": "How to enjoy Havasu without a tour guide.",
+      "content": "Havasu....you can probably hear the waterfall cascading down from the river that seems to originate from nowhere. \n \n\nWhat does it take to get to Havasu? For anyone that has tried, it takes a lot of pre-planning and a little luck. Every February 1st permits go on sale and are usually all bought up before the day ends. If they aren't all gone, only the \"cold\" months are left, if it can ever really be cold in Arizona that is. When we went in October it was less than ideal temperature wise. Once the sun goes behind the canyon walls it gets a little cold for splish- splashing around in the water. It is not snow melt water...but it certainly feels like it. I can imagine in the heat of the summer that it feels really nice to jump in and cool off! \n \nWe did not get a permit in time and ended up going with a tour company, that ended up being a Tour From Hell! If I could do it over, I would have waited a year to go and booked a permit instead. ",
+      "id": 3
     },
     {
-      "id": 4,
-      "createdAt": 1612164016425,
-      "changedAt": 1616164016425,
-      "tags": ["landscape", "snow"],
+      "createdAt": 1618053630031,
+      "changedAt": 1618053630031,
+      "tags": [
+        "landscape"
+      ],
       "imageUrl": "https://images.unsplash.com/photo-1616244013240-227ec9abfefb?auto=format&fit=crop&w=1500&q=80",
-      "title": "Test title",
-      "content": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae quibusdam doloremque a blanditiis pariatur harum placeat. Sequi distinctio quam quasi, ex culpa exercitationem voluptatum itaque amet debitis totam, quod nostrum."
+      "title": "Night Photography: Tips and Tricks",
+      "content": "Sometimes the clouds come out of nowhere and can ruin your night. But...they can also add \"drama\" to your photo and make it that much more interesting. Maybe you are going for that Milky Way photo, but if the clouds come out and try to ruin your night just go with it and you might just get an awesome shot out of it! \n\nOur first ever successful photos of the Milky Way In Gokayama, Japan. Really it was just a matter of luck. There was no moon and we were in a tiny little traditional village with like zero light pollution. It was the first time I ever noticed seeing the Milky Way with my own eyes. They are still some of my favorite photos because it does not even look like real life and it was a day for the history books. Not to mention our first creepy experience we had with night photography. \n\nIt took us a lot of failed attempts and trial and error to finally get our first Milky Way photo and truly successful night photo shot. It was in Japan and it was a beautiful night despite the ghosts and running off the mountain like scared chickens. But that is a story for another time. What I am trying to say is if the first ten times you go out shooting the night sky and do not get anything that you like, keep on trying! You will get the hang of it! ",
+      "id": 4
+    },
+    {
+      "changedAt": 1618476553130,
+      "createdAt": 1618053678096,
+      "tags": [
+        "sky"
+      ],
+      "imageUrl": "https://images.unsplash.com/photo-1613092869277-6e02af5564aa?auto=format&fit=crop&w=1500&q=80",
+      "title": "HOW TO CHASE THE NORTHERN LIGHTS IN ICELAND",
+      "content": "Me and Robert (My husband, in case you have not read the about section yet and have no idea who he is) are basically addicted to the Northern Lights and wish that they could be the Western Lights (since we live in Colorado). We saw them for our first time in January of 2016 and now we try to go and find them every year. Iceland was our second chance to see them and by far the most spectacular show we have ever seen! We went to Iceland in March... and if you get lucky enough to go during Northern Lights season you should def chase them!\n\n \n\nThe Northern Lights season in Iceland last for about eight months; from September to April. The longer your trip the more likely you are to see them. Of course, do not go just to see the lights as you could be sourly disappointed when the elusive aurora decides not to come out and dance. In Reality there is so much to do in Iceland there is no real way that you could just be going there for the Northern Lights. On our seven night trip to Iceland, we got lucky enough to see them just once! But that one night was so incredible!  We saw them in Fairbanks, Alaska the year before - but, this display blew us away! Seeing the Northern Lights in person is an experience that you have to experience to understand what I mean. If magic isn't real than the Northern Lights are the closest thing to it that I have ever experienced! It is so hard to describe because it is a surreal experience.",
+      "id": 5
     }
   ],
   "tags": [
